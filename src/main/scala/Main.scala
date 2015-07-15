@@ -89,7 +89,7 @@ object Main {
     // Exercise 3.8
     println(foldRight(List(1,2,3,4,5), Nil:List[Int])(Cons(_,_)))
     // What do you think this says about the relationship between foldRight and the data constructors of List?
-    // FoldRight can be used to construct lists?
+    // FoldRight can be used to construct lists? When you pass Nil and Cons into FoldLeft you end up with Reverse.
 
     // Exercise 3.9
     println(length(List(1,2,3,4,5)))

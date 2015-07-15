@@ -133,11 +133,20 @@ object List {
 
   // Exercise 3.13 // not doing this right now.
   def foldLeftFromFoldRight[A, B](list: List[A], seed: B)(f: (B,A) => B): B = ???
-  def foldRightFromFoldLeft[A, B](list: List[A], seed: B)(f: (A,B) => B): B = ???
+  def foldRightFromFoldLeft[A, B](list: List[A], seed: B)(f: (A,B) => B): B = {
+    val reversel = reverse(list) // same complexity but expensive
+    val reversef = {(b: B, a:A) => f(a,b)}
+    foldLeft(reversel, seed)(reversef)
+  }
+  def foldRfromfoldL[A,B](list: List[A], seed: B)(f: (A,B) => B): B = {
+    foldLeft(list, (identity: B) => identity)((accFnChain,nextElement) => outputType => accFnChain(f(nextElement,outputType)))(seed)
+  }
+  // this is a giant function chain. A LINKED LIST OF FUNCTIONS!!!!
+  // reverse of functions. Once you define the linked list of functions you kick it off with your seed.
+  // When you implement streaming, this is useful, it's like a lazy outcome. You don't need to arrive at a val.
 
   // Exercise 3.14
   // Implement append in terms of foldRight or foldLeft
-
   def append[A](a1: List[A], a2: List[A]): List[A] = a1 match {
     case Nil => a2
     case Cons(h,t) => Cons(h, append(t, a2))
