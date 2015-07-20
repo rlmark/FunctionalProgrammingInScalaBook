@@ -139,11 +139,15 @@ object Main {
     println(filterFlatMap2(List(1,2,3,4,5,6,7,8))(even))
 
     // Exercise 3.22
-    println("HELLO")
     println(correspond(List(1,2,3,4), List(4,5,6,7)))
 
     // Exercise 3.23
     println(zipWith(List(1,2,3,4), List(4,5,6,7)){(x, y) => x + y})
+
+    // Exercise 3.24
+    val superList = List(1,2,5,3,4)
+    val subList = List(1,2,3)
+    println(hasSubsequence(superList, subList))
 
     // Exercise 3.25
     println(size(testTree))
@@ -156,6 +160,29 @@ object Main {
 
     // Exercise 3.28
     println(mapTree(testTree)(x => x.toString + "!"))
+
+    // Exercise 3.29
+    println(fold(testTree)((a: Int) => a)((x: Int,y: Int) => x + y))
+
+    println(sizeWithFold(testTree))
+    println(maxWithFold(testTree))
+    println(depthWithFold(testTree))
+    println(depthRecurse(testTree))
+
+    // Exercise 4.1
+    println("HI THIS IS WHERE YOU ARE")
+    println(Some(5).map(i => i + 1))
+    println(Some(5).flatMap(i => Some(i + 1)))
+
+    println(Some(5).getOrElse("I'm missing a number"))
+    println(None.getOrElse("I'm missing a number"))
+
+    println(Some(12).orElse(Some("ReplacementOption")))
+    println(None.orElse(Some("ReplacementOption")))
+
+    println(Some(14).filter(even))
+    println(Some(13).filter(even))
+
   }
 
 }

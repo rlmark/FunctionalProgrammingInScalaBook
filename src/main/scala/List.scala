@@ -266,13 +266,50 @@ object List {
   // 1. If any l is Nil,
   // 2. when one l is longer than the other. Do I want to drop the remaining elements, or just append to end?
 
+  // Exercise 3.23
   def zipWith[A](list1 : List[A], list2: List[A])(f: (A, A) => A): List[A] = {
     def builder[A] (l1: List[A], l2: List[A], returnList: List[A] )(f: (A, A) => A): List[A] = {
       if (l1 == Nil || l2 == Nil) returnList
       else builder (tail (l1), tail (l2), Cons (f(head(l1), head(l2)), returnList))(f)
     }
-    val backwardsList = builder (list1, list2, Nil)(f)
-    reverse (backwardsList)
+    val backwardsList = builder(list1, list2, Nil)(f)
+    reverse(backwardsList)
   }
+
+  // Exercise 3.24
+  def hasSubsequence[A](superList: List[A], subList: List[A]): Boolean = subList match {
+    case Nil => true
+    case Cons(headSub, tailSub) => {
+      superList match {
+        case Nil => false
+        case Cons(headSuper, tailSuper) => subsequenceHelper(tailSuper, tailSub) || hasSubsequence(tailSuper, subList)
+
+      }
+    }
+  }
+
+  def subsequenceHelper[A](big: List[A], little: List[A]): Boolean = {
+    little match {
+      case Nil => true
+      case Cons(headLittle, tailLittle) => big match {
+        case Nil => false
+        case Cons(headBig, tailBig) => if(headBig == headLittle) subsequenceHelper(tailBig, tailLittle) else false
+      }
+    }
+  }
+
+  // Note: this seems like it works, but would fail
+  //  def hasSubsequence[A](superList: List[A], subList: List[A]): Boolean = superList match {
+  //    case Nil => false
+  //    case Cons(headSuper, tailSuper) => {
+  //      subList match {
+  //        case Nil => true
+  //        case Cons(headSub, tailSub) => {
+  //          if (headSuper == headSub) hasSubsequence(tailSuper, tailSub)
+  //          else hasSubsequence(tailSuper, subList)
+  //        }
+  //      }
+  //    }
+  //  }
 }
 
