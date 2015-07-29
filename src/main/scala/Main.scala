@@ -1,6 +1,7 @@
 import scala.annotation.tailrec
 import List._
 import Tree._
+import Option._
 
 object Main {
 
@@ -170,7 +171,6 @@ object Main {
     println(depthRecurse(testTree))
 
     // Exercise 4.1
-    println("HI THIS IS WHERE YOU ARE")
     println(Some(5).map(i => i + 1))
     println(Some(5).flatMap(i => Some(i + 1)))
 
@@ -182,6 +182,18 @@ object Main {
 
     println(Some(14).filter(even))
     println(Some(13).filter(even))
+
+    // Exercise 4.2
+    // Why????? Why does variance need to be called on an option, even a nonsensical one
+    println(Some(Nil).variance(Seq(0.0,103.4,0.04,1.403,93.92)))
+
+    // Exercise 4.3
+    println(map2(Some(3), Some(4))((x,y) => x + y))
+    println(map2(None, Some(4))((x: Int,y: Int) => x + y))
+
+    println("HI THIS IS WHERE YOU ARE")
+    println(sequence(List(Some(1), Some(2), Some(3))))
+    println(sequence(List(Some(1), None, Some(3))))
 
   }
 
