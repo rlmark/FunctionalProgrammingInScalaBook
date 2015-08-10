@@ -2,6 +2,7 @@ import scala.annotation.tailrec
 import List._
 import Tree._
 import Option._
+import Stream.Stream._
 
 object Main {
 
@@ -51,12 +52,11 @@ object Main {
     }
 
     // Exercise 2.6
-
     val x = List(1,2,3,4,5) match {
-      case Cons(x, Cons(2, Cons(4, _))) => x
+      case ConsL(x, ConsL(2, ConsL(4, _))) => x
       case Nil => 42
-      case Cons(x, Cons(y, Cons(3, Cons(4, _)))) => x + y
-      case Cons(h, t) => h + sum(t)
+      case ConsL(x, ConsL(y, ConsL(3, ConsL(4, _)))) => x + y
+      case ConsL(h, t) => h + sum(t)
       case _ => 101
     }
     // answer is 3.
@@ -88,7 +88,7 @@ object Main {
     println(init(List()))
 
     // Exercise 3.8
-    println(foldRight(List(1,2,3,4,5), Nil:List[Int])(Cons(_,_)))
+    println(foldRight(List(1,2,3,4,5), Nil:List[Int])(ConsL(_,_)))
     // What do you think this says about the relationship between foldRight and the data constructors of List?
     // FoldRight can be used to construct lists? When you pass Nil and Cons into FoldLeft you end up with Reverse.
 
@@ -191,9 +191,38 @@ object Main {
     println(map2(Some(3), Some(4))((x,y) => x + y))
     println(map2(None, Some(4))((x: Int,y: Int) => x + y))
 
-    println("HI THIS IS WHERE YOU ARE")
     println(sequence(List(Some(1), Some(2), Some(3))))
     println(sequence(List(Some(1), None, Some(3))))
+
+    // Exercise 5.1
+    println(testStream.toList)
+
+    // Exercise 5.2
+    println(testStream.take(3).toList)
+    println(testStream.drop(5).toList)
+    println(testStream.drop(2).toList)
+
+    // Exercise 5.3
+    def lessThan(i: Int): Boolean = {
+      i <= 3
+    }
+    println(testStream.takeWhile(lessThan).toList)
+
+    // Exercise 5.4
+    println(testStream.forAll(lessThan))
+
+    // Exercise 5.5
+    println(testStream.takeWhileFold(lessThan).toList)
+
+    // Exercise 5.6
+    println(testStream.map(x => x.toString + "hi").toList)
+    println(testStream.appendStream(testStream).toList)
+    println(testStream.filter(x => x%2 == 1).toList)
+
+    // Exercise 5.7
+    println("HI THIS IS WHERE YOU ARE")
+    println(ones.take(4).toList)
+    println(constant(5).take(6).toList)
 
   }
 
