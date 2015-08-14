@@ -231,12 +231,16 @@ object Main {
     // Exercise 5.10
     println(fibs.take(7).toList)
 
-    println("HI THIS IS WHERE YOU ARE")
+    // Exercise 5.12
     println(onesUnfold.take(6).toList)
     println(constantUnfold("a").take(4).toList)
     println(fromUnfold(6).take(10).toList)
     println(fibsUnfold.take(10).toList)
 
+    // Exercise 5.13
+    println("HI THIS IS WHERE YOU ARE")
+    println(testStream.mapUnfold(x=> x.toString).toList)
+    println(from(1).mapUnfold(x=> x * 2).take(10).toList)
   }
 
 }

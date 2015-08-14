@@ -50,7 +50,7 @@ sealed trait Stream[+A] {
   // Exercise 5.4
   // Checks that all elements in the Stream match a given predicate.
   // Your implementation should terminate the traversal as soon as it encounters a non-matching value.
-  def forAll(p: A=> Boolean): Boolean = this match {
+  def forAll(p: A => Boolean): Boolean = this match {
     case Empty => true
     case Cons(head, tail) => p(head()) && tail().forAll(p) //if (!p(head())) false else tail().forAll(p)
   }
@@ -87,6 +87,20 @@ sealed trait Stream[+A] {
   def filter(f: A => Boolean): Stream[A] = {
     this.foldRightStream(Empty: Stream[A])((a, acc) => if (f(a)) Cons(() => a, () => acc) else acc )
   }
+
+  // Exercise 5.13
+  def mapUnfold[B](f: A => B):Stream[B] = {
+    Stream.unfold(this: Stream[A]){s => s match {
+      case Empty => None
+      case Cons(a, tail) => Some((f(a()), tail()))
+      }
+    }
+  }
+
+//  def takeUnfold:Stream[A] = ???
+//  def takeWhileUnfold:Stream[A] = ???
+//  def zipWithUnfold:Stream[A] = ???
+//  def zipAll[B](s2: Stream[B]): Stream[(Option[A],Option[B])]
 
 }
 case object Empty extends Stream[Nothing]
@@ -131,11 +145,11 @@ object Stream {
 
   // Exercise 5.11
   // It takes an initial state, and a function for producing both the next state and the next value in the generated stream.
-  def unfold[A, S](z: S)(f: S => Option[(A, S)]): Stream[A] =
-    f(z) match {
-      case None => Empty
-      case Some((a: A, s: S)) => cons(a, unfold(s)(f))
-    }
+  def unfold[A, S](z: S)(f: S => Option[(A, S)]): Stream[A] = f(z) match {
+    case None => Empty
+    case Some((a: A, s: S)) => cons(a, unfold(s)(f))
+  }
+
 
   // Exercise 5.12
   // Write fibs, from, constant, and ones in terms of unfold.
@@ -146,7 +160,4 @@ object Stream {
     val tail = unfold((0, 1))((tuple) => Some((tuple._1 + tuple._2, (tuple._2, tuple._1 + tuple._2))))
     cons(0, cons(1, tail))
   }
-
-  
-
 }
