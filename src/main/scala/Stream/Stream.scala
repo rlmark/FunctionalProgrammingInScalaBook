@@ -64,7 +64,7 @@ sealed trait Stream[+A] {
     foldRightStream(Empty: Stream[A])((a, acc) => if (f(a)) Cons(() => a, () => acc) else acc )
   }
 
-  // Exercise 5.6
+  // Exercise 5.7
   // Implement map, filter, append, and flatMap using foldRight. The append method should be non-strict in its argument.
   def map[B](f: A => B): Stream[B] = {
     foldRightStream(Empty: Stream[B])((a, acc) => Cons(() => f(a),() => acc))
@@ -87,10 +87,6 @@ sealed trait Stream[+A] {
   def filter(f: A => Boolean): Stream[A] = {
     this.foldRightStream(Empty: Stream[A])((a, acc) => if (f(a)) Cons(() => a, () => acc) else acc )
   }
-
-
-
-
 
 }
 case object Empty extends Stream[Nothing]
@@ -119,7 +115,38 @@ object Stream {
     cons(x, constant(x))
   }
 
+  // Exercise 5.9
+  // generates an infinite stream of integers, starting from n, then n + 1, n + 2, and so on
+  def from(n: Int): Stream[Int] = {
+    cons(n, from(n+1))
+  }
+
+  // Exercise 5.10
+  def fibs:Stream[Int] = {
+    cons(0, cons(1, increment(0,1)))
+  }
+  def increment(a: Int, b: Int):Stream[Int] = {
+    cons(a+b, increment(b, a+b))
+  }
+
   // Exercise 5.11
   // It takes an initial state, and a function for producing both the next state and the next value in the generated stream.
-  def unfold[A, S](z: S)(f: S => Option[(A, S)]): Stream[A] = ???
+  def unfold[A, S](z: S)(f: S => Option[(A, S)]): Stream[A] =
+    f(z) match {
+      case None => Empty
+      case Some((a: A, s: S)) => cons(a, unfold(s)(f))
+    }
+
+  // Exercise 5.12
+  // Write fibs, from, constant, and ones in terms of unfold.
+  def onesUnfold:Stream[Int] = unfold(1)(self => Some((self, 1)))
+  def constantUnfold[A](i: A): Stream[A] = unfold(i)(self => Some((self, i)))
+  def fromUnfold(n: Int):Stream[Int] = unfold(n)(number => Some((number, number+1)))
+  def fibsUnfold:Stream[Int] = {
+    val tail = unfold((0, 1))((tuple) => Some((tuple._1 + tuple._2, (tuple._2, tuple._1 + tuple._2))))
+    cons(0, cons(1, tail))
+  }
+
+  
+
 }

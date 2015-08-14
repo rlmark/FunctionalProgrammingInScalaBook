@@ -220,9 +220,22 @@ object Main {
     println(testStream.filter(x => x%2 == 1).toList)
 
     // Exercise 5.7
-    println("HI THIS IS WHERE YOU ARE")
     println(ones.take(4).toList)
+
+    // Exercise 5.8
     println(constant(5).take(6).toList)
+
+    // Exercise 5.9
+    println(from(4).take(5).toList)
+
+    // Exercise 5.10
+    println(fibs.take(7).toList)
+
+    println("HI THIS IS WHERE YOU ARE")
+    println(onesUnfold.take(6).toList)
+    println(constantUnfold("a").take(4).toList)
+    println(fromUnfold(6).take(10).toList)
+    println(fibsUnfold.take(10).toList)
 
   }
 
