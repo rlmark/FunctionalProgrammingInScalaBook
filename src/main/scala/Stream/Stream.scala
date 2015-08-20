@@ -1,6 +1,6 @@
 package Stream
+import Stream.cons
 
-import scala.collection.immutable.Stream.cons
 
 sealed trait Stream[+A] {
 
@@ -97,8 +97,16 @@ sealed trait Stream[+A] {
     }
   }
 
-//  def takeUnfold:Stream[A] = ???
-//  def takeWhileUnfold:Stream[A] = ???
+  def takeUnfold(num: Int):Stream[A] = {
+    Stream.unfold(num, this){
+      case(1, Cons(h, t)) => Some(h(), (1,Empty))
+      case(num, Cons(h, t)) => Some(h(), (num-1, t()))
+      case _ => None
+    }
+  }
+
+
+  def takeWhileUnfold(f: A => Boolean):Stream[A] = ???
 //  def zipWithUnfold:Stream[A] = ???
 //  def zipAll[B](s2: Stream[B]): Stream[(Option[A],Option[B])]
 
@@ -157,7 +165,7 @@ object Stream {
   def constantUnfold[A](i: A): Stream[A] = unfold(i)(self => Some((self, i)))
   def fromUnfold(n: Int):Stream[Int] = unfold(n)(number => Some((number, number+1)))
   def fibsUnfold:Stream[Int] = {
-    val tail = unfold((0, 1))((tuple) => Some((tuple._1 + tuple._2, (tuple._2, tuple._1 + tuple._2))))
-    cons(0, cons(1, tail))
+    unfold((0, 1))((tuple) => Some((tuple._1, (tuple._2, tuple._1 + tuple._2))))
   }
+  def fibsUnfold2: Stream[Int] = {unfold((0,1)){case (s1, s2) => Some(s1, (s2,s1 + s2))}}
 }

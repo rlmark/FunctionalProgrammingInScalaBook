@@ -241,6 +241,8 @@ object Main {
     println("HI THIS IS WHERE YOU ARE")
     println(testStream.mapUnfold(x=> x.toString).toList)
     println(from(1).mapUnfold(x=> x * 2).take(10).toList)
+    println(testStream.takeUnfold(12).toList)
+    println(testStream.takeUnfold(1).toList)
   }
 
 }
