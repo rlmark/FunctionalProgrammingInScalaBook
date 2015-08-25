@@ -92,14 +92,14 @@ object Option {
   //  }
   def sequence[A](as: List[Option[A]]): Option[List[A]] = {
     foldRight(as, Some(List()):Option[List[A]]){ (optionA: Option[A], accumulator: Option[List[A]]) =>
-      map2(optionA, accumulator)( (a: A, b: List[A]) => ConsL(a, b))
+      map2(optionA, accumulator)( (a: A, b: List[A]) => Cons(a, b))
       }
     }
 
   def sequence1[A](as: List[Option[A]]): Option[List[A]] = as match {
     case Nil => Some(Nil)
-    case ConsL(Some(head), tail) => sequence1(tail).map(ConsL(head,_))
-    case ConsL(None, tail) => None
+    case Cons(Some(head), tail) => sequence1(tail).map(Cons(head,_))
+    case Cons(None, tail) => None
   }
 
   // Exercise 4.5

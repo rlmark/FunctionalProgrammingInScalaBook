@@ -53,10 +53,10 @@ object Main {
 
     // Exercise 2.6
     val x = List(1,2,3,4,5) match {
-      case ConsL(x, ConsL(2, ConsL(4, _))) => x
+      case Cons(x, Cons(2, Cons(4, _))) => x
       case Nil => 42
-      case ConsL(x, ConsL(y, ConsL(3, ConsL(4, _)))) => x + y
-      case ConsL(h, t) => h + sum(t)
+      case Cons(x, Cons(y, Cons(3, Cons(4, _)))) => x + y
+      case Cons(h, t) => h + sum(t)
       case _ => 101
     }
     // answer is 3.
@@ -88,7 +88,7 @@ object Main {
     println(init(List()))
 
     // Exercise 3.8
-    println(foldRight(List(1,2,3,4,5), Nil:List[Int])(ConsL(_,_)))
+    println(foldRight(List(1,2,3,4,5), Nil:List[Int])(Cons(_,_)))
     // What do you think this says about the relationship between foldRight and the data constructors of List?
     // FoldRight can be used to construct lists? When you pass Nil and Cons into FoldLeft you end up with Reverse.
 
@@ -238,11 +238,21 @@ object Main {
     println(fibsUnfold.take(10).toList)
 
     // Exercise 5.13
-    println("HI THIS IS WHERE YOU ARE")
     println(testStream.mapUnfold(x=> x.toString).toList)
     println(from(1).mapUnfold(x=> x * 2).take(10).toList)
+
     println(testStream.takeUnfold(12).toList)
     println(testStream.takeUnfold(1).toList)
+
+    println(testStream.takeWhileUnfold(x => x < 5).toList)
+    println(testStream.takeWhileUnfold(x => x < 1000).toList)
+
+    println("HI THIS IS WHERE YOU ARE")
+
+    println(testStream.zipWithUnfold(testStream.take(3))((x,y) => x + y).toList)
+    println(testStream.zipWithUnfold(testStream)((x,y) => x + y).toList)
+
+
   }
 
 }

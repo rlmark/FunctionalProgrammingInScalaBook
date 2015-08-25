@@ -2,36 +2,34 @@ import scala.annotation.tailrec
 
 sealed trait List[+A]
 case object Nil extends List[Nothing]
-case class ConsL[+A](head: A, tail: List[A]) extends List[A] {
-  def ::[AA >: A](other: AA): List[AA] = ConsL(other, this)
+case class Cons[+A](head: A, tail: List[A]) extends List[A] {
+  def ::[AA >: A](other: AA): List[AA] = Cons(other, this)
 }
 
 object List {
   def apply[A](as: A*): List[A] =
     if (as.isEmpty) Nil
-    else ConsL(as.head, apply(as.tail: _*))
+    else Cons(as.head, apply(as.tail: _*))
 
   def sum(ints: List[Int]): Int = ints match {
     case Nil => 0
-    case ConsL(x, xs) => x + sum(xs)
+    case Cons(x, xs) => x + sum(xs)
   }
 
   def product(ds: List[Double]): Double = ds match {
     case Nil => 1.0
-    case ConsL(0.0, _) => 0.0
-    case ConsL(x, xs) => x * product(xs)
+    case Cons(0.0, _) => 0.0
+    case Cons(x, xs) => x * product(xs)
   }
 
   def foldRight[A, B](list: List[A], seed: B)(f: (A, B) => B): B = {
     list match {
       case (Nil) => seed
-      case (ConsL(head, tail)) =>
-        val foldRightOnTail: B = foldRight(tail, seed)(f)
-        f(head, foldRightOnTail)
+      case (Cons(head, tail)) => f(head, foldRight(tail, seed)(f))
     }
   }
 
-  def consl[A](h: A, tl: List[A]): List[A] = ConsL[A](h, tl)
+  def consl[A](h: A, tl: List[A]): List[A] = Cons[A](h, tl)
 
   def sum1(list: List[Int]): Int = {
     foldRight(list, 0)((x, y) => x + y)
@@ -44,20 +42,20 @@ object List {
   // Exercise 3.2
   def tail[A](list: List[A]): List[A] = {
     list match {
-      case (ConsL(head, tail)) => tail
+      case (Cons(head, tail)) => tail
       case Nil => Nil
     }
   }
 
   def head[A](list: List[A]):A = list match {
-    case ConsL(head, tail) => head
+    case Cons(head, tail) => head
     case Nil => throw new NoSuchElementException("Hey, that's an empty list")
   }
 
   // Exercise 3.3
   def setHead[A](newItem: A, list: List[A]): List[A] = list match {
-    case (ConsL(_, tail)) => ConsL(newItem, tail)
-    case Nil => ConsL(newItem, Nil)
+    case (Cons(_, tail)) => Cons(newItem, tail)
+    case Nil => Cons(newItem, Nil)
   }
 
   // Exercise 3.4
@@ -78,7 +76,7 @@ object List {
   def dropWhile[A](l: List[A], f: A => Boolean): List[A] = {
     l match {
       case (Nil) => Nil
-      case (ConsL(head, tail)) => if (f(head)) dropWhile(tail, f)
+      case (Cons(head, tail)) => if (f(head)) dropWhile(tail, f)
       else l
     }
   }
@@ -87,9 +85,9 @@ object List {
   def init[A](l: List[A]): List[A] = {
     l match {
       case (Nil) => Nil
-      case (ConsL(head, Nil)) => Nil
-      case (ConsL(head1, (ConsL(head2, Nil)))) => ConsL(head1, Nil)
-      case (ConsL(head, tail)) => ConsL(head, init(tail))
+      case (Cons(head, Nil)) => Nil
+      case (Cons(head1, (Cons(head2, Nil)))) => Cons(head1, Nil)
+      case (Cons(head, tail)) => Cons(head, init(tail))
     }
   }
 
@@ -109,7 +107,7 @@ object List {
   def foldLeft[A,B](as: List[A], seed: B)(f: (B, A) => B): B = {
     as match {
       case (Nil) => seed
-      case (ConsL(head, tail)) => foldLeft(tail, f(seed, head))(f) // Think about this.
+      case (Cons(head, tail)) => foldLeft(tail, f(seed, head))(f) // Think about this.
     }
   }
 
@@ -129,7 +127,7 @@ object List {
   // Exercise 3.12
   def reverse[A](list: List[A]): List[A] = {
     foldLeft(list, Nil: List[A])((b,a) => {
-      val result = ConsL(a, b)
+      val result = Cons(a, b)
       result
     })
   }
@@ -152,7 +150,7 @@ object List {
   // Implement append in terms of foldRight or foldLeft
   def append[A](a1: List[A], a2: List[A]): List[A] = a1 match {
     case Nil => a2
-    case ConsL(h,t) => ConsL(h, append(t, a2))
+    case Cons(h,t) => Cons(h, append(t, a2))
   }
 
 //  def append2[A](list1: List[A], list2: List[A]): List[A] = list1 match {
@@ -163,39 +161,39 @@ object List {
   // Close but no cigar
   def append3[A](list1: List[A], list2: List[A]): List[A] = list1 match {
     case Nil => list2
-    case(ConsL(head,tail)) => ConsL(head, foldRight(list2, Nil: List[A])((a,b) => ConsL(a,b)))
+    case(Cons(head,tail)) => Cons(head, foldRight(list2, Nil: List[A])((a,b) => Cons(a,b)))
   }
 
   def append4[A](list1: List[A], list2: List[A]): List[A] = {
     // maybe make the seed of list 1 the result of a foldRight on list 2...???
-    val seedIsL2 = foldRight(list2, Nil: List[A])((x,y)=> ConsL(x,y))
-    foldRight(list1, seedIsL2)((a,b)=> ConsL(a,b))
+    val seedIsL2 = foldRight(list2, Nil: List[A])((x,y)=> Cons(x,y))
+    foldRight(list1, seedIsL2)((a,b)=> Cons(a,b))
     // YASSSS!!!
   }
 
   def append5[A](list1: List[A], list2: List[A]): List[A] = {
-    foldRight(list1, list2)((a,b) => ConsL(a,b))
+    foldRight(list1, list2)((a,b) => Cons(a,b))
   }
 
   // Exercise 3.15
   // Concatenate a list of lists into a single list
   def concatenateLists[A](listOfLists: List[List[A]]):List[A] = listOfLists match {
     case Nil => Nil
-    case (ConsL(miniList, tail)) => append(foldRight(miniList, Nil: List[A])((a,b)=>ConsL(a,b)), concatenateLists(tail))
+    case (Cons(miniList, tail)) => append(foldRight(miniList, Nil: List[A])((a,b)=>Cons(a,b)), concatenateLists(tail))
   }
 
   // Exercise 3.16
   // Write a function that transforms a list of integers by adding 1 to each element.
   def add1(list: List[Int]): List[Int] = list match {
     case Nil => Nil
-    case ConsL(head: Int, tail: List[Int]) => ConsL(head + 1, add1(tail))
+    case Cons(head: Int, tail: List[Int]) => Cons(head + 1, add1(tail))
   }
 
   def add1Fold(list: List[Int]): List[Int] = {
     foldRight(list, Nil: List[Int]){
       case ( i: Int, outputList) =>
         val v = i + 1
-        ConsL(v, outputList)
+        Cons(v, outputList)
     }
   }
 
@@ -203,14 +201,14 @@ object List {
   // Write a function that turns each value in a List[Double] into a String.
   def doubleToString(list: List[Double]): List[String] = list match {
     case Nil => Nil
-    case ConsL(head, tail) => ConsL(head.toString, doubleToString(tail))
+    case Cons(head, tail) => Cons(head.toString, doubleToString(tail))
   }
 
   def doubleToStringFold(list: List[Double]): List[String] = {
     foldRight(list, Nil: List[String]){
       case(d: Double, outputList) =>
         val string: String = d.toString
-        ConsL(string, outputList)
+        Cons(string, outputList)
     }
   }
 
@@ -218,15 +216,15 @@ object List {
   // Write a function that generalizes modifying each element in a list while maintaining the structure of the list.
   def map[A, B](list : List[A])(f: A => B): List[B] = list match {
     case Nil => Nil
-    case ConsL(head, tail) => ConsL(f(head), map(tail)(f))
+    case Cons(head, tail) => Cons(f(head), map(tail)(f))
   }
   // Note, this implementation is not tail recursive
 
   def mapWithFold[A,B](list: List[A])(f: A => B): List[B] = {
     foldRight(list, Nil: List[B]){
-      case(item: A, outputList: List[B]) =>
-        val mutated: B = f(item)
-        ConsL(mutated, outputList)
+      case(item, outputList: List[B]) =>
+        val mutated = f(item)
+        Cons(mutated, outputList)
     }
   }
 
@@ -234,8 +232,8 @@ object List {
   // Write a filter function which takes elements out of a list if they do not fulfill a predicate
   def filter[A](as: List[A])(f: A => Boolean): List[A] = as match {
     case Nil => Nil
-    case ConsL(head, tail) =>
-      if (f(head) == true) ConsL(head,filter(tail)(f))
+    case Cons(head, tail) =>
+      if (f(head) == true) Cons(head,filter(tail)(f))
       else filter(tail)(f)
   }
 
@@ -243,7 +241,7 @@ object List {
   // flatMap  works like map except that the function given will return a list instead of a single result,
   // and that list should be inserted into the final resulting list.
     def flatMap[A,B](as: List[A])(f: A => List[B]): List[B] = {
-      val listOfLists = foldRight(as, Nil: List[List[B]])((a, outputList) => ConsL(f(a), outputList))
+      val listOfLists = foldRight(as, Nil: List[List[B]])((a, outputList) => Cons(f(a), outputList))
       concatenateLists(listOfLists)
     }
 
@@ -259,7 +257,7 @@ object List {
   def correspond(list1: List[Int], list2: List[Int]): List[Int] = {
     def builder(l1: List[Int], l2: List[Int], returnList: List[Int]): List[Int] = {
       if (l1 == Nil || l2 == Nil ) returnList
-      else builder(tail(l1), tail(l2), ConsL(head(l1) + head(l2), returnList))
+      else builder(tail(l1), tail(l2), Cons(head(l1) + head(l2), returnList))
     }
     val backwardsList = builder(list1, list2, Nil)
     reverse(backwardsList)
@@ -273,7 +271,7 @@ object List {
   def zipWith[A](list1 : List[A], list2: List[A])(f: (A, A) => A): List[A] = {
     def builder[A] (l1: List[A], l2: List[A], returnList: List[A] )(f: (A, A) => A): List[A] = {
       if (l1 == Nil || l2 == Nil) returnList
-      else builder (tail (l1), tail (l2), ConsL (f(head(l1), head(l2)), returnList))(f)
+      else builder (tail (l1), tail (l2), Cons (f(head(l1), head(l2)), returnList))(f)
     }
     val backwardsList = builder(list1, list2, Nil)(f)
     reverse(backwardsList)
@@ -282,11 +280,10 @@ object List {
   // Exercise 3.24
   def hasSubsequence[A](superList: List[A], subList: List[A]): Boolean = subList match {
     case Nil => true
-    case ConsL(headSub, tailSub) => {
+    case Cons(headSub, tailSub) => {
       superList match {
         case Nil => false
-        case ConsL(headSuper, tailSuper) => subsequenceHelper(tailSuper, tailSub) || hasSubsequence(tailSuper, subList)
-
+        case Cons(headSuper, tailSuper) => subsequenceHelper(tailSuper, tailSub) || hasSubsequence(tailSuper, subList)
       }
     }
   }
@@ -294,9 +291,9 @@ object List {
   def subsequenceHelper[A](big: List[A], little: List[A]): Boolean = {
     little match {
       case Nil => true
-      case ConsL(headLittle, tailLittle) => big match {
+      case Cons(headLittle, tailLittle) => big match {
         case Nil => false
-        case ConsL(headBig, tailBig) => if(headBig == headLittle) subsequenceHelper(tailBig, tailLittle) else false
+        case Cons(headBig, tailBig) => if(headBig == headLittle) subsequenceHelper(tailBig, tailLittle) else false
       }
     }
   }

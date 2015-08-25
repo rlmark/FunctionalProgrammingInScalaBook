@@ -106,9 +106,23 @@ sealed trait Stream[+A] {
   }
 
 
-  def takeWhileUnfold(f: A => Boolean):Stream[A] = ???
-//  def zipWithUnfold:Stream[A] = ???
-//  def zipAll[B](s2: Stream[B]): Stream[(Option[A],Option[B])]
+  def takeWhileUnfold(f: A => Boolean):Stream[A] = {
+    Stream.unfold(this, f){
+      case(Cons(h,t), f) => if (f(h()) == true) Some(h(), (t(), f))
+                            else None
+      case(Empty, f) => None
+    }
+  }
+
+  // zipWith takes two streams of A and a function for combining them to produce a new Stream
+  def zipWithUnfold[B, C](stream2: Stream[B])(f: (A, B) => C):Stream[C] = {
+    Stream.unfold(this, stream2, f){
+      case(Cons(h1, t1), Cons(h2, t2), f) => Some( f(h1(), h2()), (t1(), t2(), f) )
+      case _ => None
+    }
+  }
+  // zipAll function should continue the traversal as long as either stream has more elements
+  def zipAll[B](s2: Stream[B]): Stream[(Option[A],Option[B])] = ???
 
 }
 case object Empty extends Stream[Nothing]
