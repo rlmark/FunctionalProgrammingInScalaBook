@@ -2,93 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e52240ee-d674-461b-8002-bba9bc16c760" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/ConsL$.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/ConsL.class" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Stream/Cons$.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Stream/Cons$.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Stream/Cons.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Stream/Cons.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Stream/Empty$.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Stream/Empty$.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Stream/Empty.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Stream/Empty.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/List$$anonfun$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/List$$anonfun$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/List$$anonfun$2.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/List$$anonfun$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/List$$anonfun$3.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/List$$anonfun$3.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/List$$anonfun$add1Fold$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/List$$anonfun$add1Fold$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/List$$anonfun$append3$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/List$$anonfun$append3$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/List$$anonfun$append4$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/List$$anonfun$append4$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/List$$anonfun$append5$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/List$$anonfun$append5$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/List$$anonfun$concatenateLists$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/List$$anonfun$concatenateLists$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/List$$anonfun$doubleToStringFold$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/List$$anonfun$doubleToStringFold$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/List$$anonfun$filterFlatMap2$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/List$$anonfun$filterFlatMap2$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/List$$anonfun$foldRfromfoldL$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/List$$anonfun$foldRfromfoldL$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/List$$anonfun$foldRfromfoldL$2$$anonfun$apply$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/List$$anonfun$foldRfromfoldL$2$$anonfun$apply$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/List$$anonfun$foldRfromfoldL$2.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/List$$anonfun$foldRfromfoldL$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/List$$anonfun$length$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/List$$anonfun$length$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/List$$anonfun$lengthLeft$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/List$$anonfun$lengthLeft$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/List$$anonfun$mapWithFold$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/List$$anonfun$mapWithFold$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/List$$anonfun$product1$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/List$$anonfun$product1$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/List$$anonfun$productLeft$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/List$$anonfun$productLeft$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/List$$anonfun$reverse$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/List$$anonfun$reverse$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/List$$anonfun$sum1$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/List$$anonfun$sum1$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/List$$anonfun$sumLeft$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/List$$anonfun$sumLeft$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/List$.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/List$.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/List.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/List.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Main$$anonfun$main$18.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Main$$anonfun$main$18.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Main$$anonfun$main$19.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Main$$anonfun$main$19.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Main$$anonfun$main$20.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Main$$anonfun$main$20.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Main$$anonfun$main$21.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Main$$anonfun$main$21.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Main$$anonfun$main$22.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Main$$anonfun$main$22.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Main$$anonfun$main$23.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Main$$anonfun$main$23.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Main$$anonfun$main$24.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Main$$anonfun$main$24.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Main$$anonfun$main$25.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Main$$anonfun$main$25.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Main$$anonfun$main$26.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Main$$anonfun$main$26.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Main$$anonfun$main$27.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Main$$anonfun$main$27.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Main$$anonfun$main$28.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Main$$anonfun$main$28.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Main$.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Main$.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Option$$anonfun$sequence$1$$anonfun$apply$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Option$$anonfun$sequence$1$$anonfun$apply$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Option$$anonfun$sequence$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Option$$anonfun$sequence$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Option$$anonfun$sequence1$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Option$$anonfun$sequence1$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Option$.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Option$.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Stream/Stream$$anonfun$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Stream/Stream$$anonfun$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Stream/Stream$$anonfun$2.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Stream/Stream$$anonfun$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Stream/Stream$$anonfun$3$$anonfun$apply$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Stream/Stream$$anonfun$3$$anonfun$apply$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Stream/Stream$$anonfun$3$$anonfun$apply$10$$anonfun$apply$11$$anonfun$apply$12$$anonfun$apply$13.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Stream/Stream$$anonfun$3$$anonfun$apply$10$$anonfun$apply$11$$anonfun$apply$12$$anonfun$apply$13.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Stream/Stream$$anonfun$3$$anonfun$apply$10$$anonfun$apply$11$$anonfun$apply$12$$anonfun$apply$4.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Stream/Stream$$anonfun$3$$anonfun$apply$10$$anonfun$apply$11$$anonfun$apply$12$$anonfun$apply$4.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Stream/Stream$$anonfun$3$$anonfun$apply$10$$anonfun$apply$11$$anonfun$apply$12.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Stream/Stream$$anonfun$3$$anonfun$apply$10$$anonfun$apply$11$$anonfun$apply$12.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Stream/Stream$$anonfun$3$$anonfun$apply$10$$anonfun$apply$11$$anonfun$apply$3.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Stream/Stream$$anonfun$3$$anonfun$apply$10$$anonfun$apply$11$$anonfun$apply$3.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Stream/Stream$$anonfun$3$$anonfun$apply$10$$anonfun$apply$11.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Stream/Stream$$anonfun$3$$anonfun$apply$10$$anonfun$apply$11.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Stream/Stream$$anonfun$3$$anonfun$apply$10$$anonfun$apply$2.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Stream/Stream$$anonfun$3$$anonfun$apply$10$$anonfun$apply$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Stream/Stream$$anonfun$3$$anonfun$apply$10.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Stream/Stream$$anonfun$3$$anonfun$apply$10.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Stream/Stream$$anonfun$3.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Stream/Stream$$anonfun$3.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Stream/Stream$$anonfun$4.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Stream/Stream$$anonfun$4.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Stream/Stream$$anonfun$apply$14.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Stream/Stream$$anonfun$apply$14.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Stream/Stream$$anonfun$apply$15.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Stream/Stream$$anonfun$apply$15.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Stream/Stream$$anonfun$cons$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Stream/Stream$$anonfun$cons$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Stream/Stream$$anonfun$cons$2.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Stream/Stream$$anonfun$cons$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Stream/Stream$$anonfun$constant$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Stream/Stream$$anonfun$constant$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Stream/Stream$$anonfun$constant$2.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Stream/Stream$$anonfun$constant$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Stream/Stream$$anonfun$constantUnfold$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Stream/Stream$$anonfun$constantUnfold$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Stream/Stream$$anonfun$fibs$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Stream/Stream$$anonfun$fibs$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Stream/Stream$$anonfun$fibs$2$$anonfun$apply$16.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Stream/Stream$$anonfun$fibs$2$$anonfun$apply$16.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Stream/Stream$$anonfun$fibs$2$$anonfun$apply$5.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Stream/Stream$$anonfun$fibs$2$$anonfun$apply$5.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Stream/Stream$$anonfun$fibs$2.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Stream/Stream$$anonfun$fibs$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Stream/Stream$$anonfun$fibsUnfold$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Stream/Stream$$anonfun$fibsUnfold$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Stream/Stream$$anonfun$fibsUnfold2$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Stream/Stream$$anonfun$fibsUnfold2$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Stream/Stream$$anonfun$from$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Stream/Stream$$anonfun$from$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Stream/Stream$$anonfun$from$2.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Stream/Stream$$anonfun$from$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Stream/Stream$$anonfun$fromUnfold$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Stream/Stream$$anonfun$fromUnfold$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Stream/Stream$$anonfun$increment$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Stream/Stream$$anonfun$increment$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Stream/Stream$$anonfun$increment$2.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Stream/Stream$$anonfun$increment$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Stream/Stream$$anonfun$onesUnfold$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Stream/Stream$$anonfun$onesUnfold$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Stream/Stream$$anonfun$unfold$1.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Stream/Stream$$anonfun$unfold$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Stream/Stream$$anonfun$unfold$2.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Stream/Stream$$anonfun$unfold$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Stream/Stream$.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Stream/Stream$.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Stream/Stream$class.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Stream/Stream$class.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/scala-2.11/classes/Stream/Stream.class" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/Stream/Stream.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/List.scala" afterPath="$PROJECT_DIR$/src/main/scala/List.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/Main.scala" afterPath="$PROJECT_DIR$/src/main/scala/Main.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/Option.scala" afterPath="$PROJECT_DIR$/src/main/scala/Option.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/Stream/Stream.scala" afterPath="$PROJECT_DIR$/src/main/scala/Stream/Stream.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ExcercisesCh2-3.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -129,28 +43,28 @@
       <file leaf-file-name="Stream.scala" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/scala/Stream/Stream.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="2297" max-vertical-offset="2865">
-              <caret line="180" column="32" selection-start-line="180" selection-start-column="32" selection-end-line="180" selection-end-column="32" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="1608" max-vertical-offset="2865">
+              <caret line="124" column="67" selection-start-line="124" selection-start-column="64" selection-end-line="124" selection-end-column="67" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.0080645" vertical-offset="0" max-vertical-offset="465">
-              <caret line="25" column="9" selection-start-line="25" selection-start-column="9" selection-end-line="25" selection-end-column="9" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="465">
+              <caret line="15" column="5" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="List.scala" pinned="false" current-in-tab="false">
+      <file leaf-file-name="List.scala" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/scala/List.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="4275" max-vertical-offset="4815">
-              <caret line="285" column="118" selection-start-line="285" selection-start-column="118" selection-end-line="285" selection-end-column="118" />
+            <state vertical-scroll-proportion="0.46376812" vertical-offset="1475" max-vertical-offset="4815">
+              <caret line="109" column="66" selection-start-line="109" selection-start-column="66" selection-end-line="109" selection-end-column="66" />
               <folding />
             </state>
           </provider>
@@ -170,8 +84,8 @@
         <option value="$PROJECT_DIR$/src/main/scala/Tree.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/Main.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/Stream/Stream.scala" />
-        <option value="$PROJECT_DIR$/src/main/scala/List.scala" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/src/main/scala/List.scala" />
       </list>
     </option>
   </component>
@@ -587,18 +501,19 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1260" height="688" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32885906" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32885906" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22121711" sideWeight="0.50124687" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32718122" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22121711" sideWeight="0.49875313" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="SBT" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -612,7 +527,6 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32885906" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39932886" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32718122" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -950,26 +864,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/List.scala">
+    <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4815">
-          <caret line="285" column="118" selection-start-line="285" selection-start-column="118" selection-end-line="285" selection-end-column="118" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="465">
+          <caret line="15" column="5" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/Stream/Stream.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2297" max-vertical-offset="2865">
-          <caret line="180" column="32" selection-start-line="180" selection-start-column="32" selection-end-line="180" selection-end-column="32" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="1608" max-vertical-offset="2865">
+          <caret line="124" column="67" selection-start-line="124" selection-start-column="64" selection-end-line="124" selection-end-column="67" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
+    <entry file="file://$PROJECT_DIR$/src/main/scala/List.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.0080645" vertical-offset="0" max-vertical-offset="465">
-          <caret line="25" column="9" selection-start-line="25" selection-start-column="9" selection-end-line="25" selection-end-column="9" />
+        <state vertical-scroll-proportion="0.46376812" vertical-offset="1475" max-vertical-offset="4815">
+          <caret line="109" column="66" selection-start-line="109" selection-start-column="66" selection-end-line="109" selection-end-column="66" />
           <folding />
         </state>
       </provider>

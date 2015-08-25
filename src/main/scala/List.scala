@@ -107,7 +107,7 @@ object List {
   def foldLeft[A,B](as: List[A], seed: B)(f: (B, A) => B): B = {
     as match {
       case (Nil) => seed
-      case (Cons(head, tail)) => foldLeft(tail, f(seed, head))(f) // Think about this.
+      case (Cons(head, tail)) => foldLeft(tail, f(seed, head))(f) 
     }
   }
 

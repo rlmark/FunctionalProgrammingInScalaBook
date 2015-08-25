@@ -1,12 +1,7 @@
 *.class
 *.log
 
-# IntelliJ
-*.iml
-*.ipr
-*.iws
-.idea
-out
+
 
 # sbt specific
 .cache
@@ -22,5 +17,10 @@ project/plugins/project/
 # Scala-IDE specific
 .scala_dependencies
 .worksheet
+*.iml
+*.ipr
+*.iws
+.idea
+out
 
 .DS_Store
