@@ -183,3 +183,4 @@ object Stream {
   }
   def fibsUnfold2: Stream[Int] = {unfold((0,1)){case (s1, s2) => Some(s1, (s2,s1 + s2))}}
 }
+
