@@ -194,6 +194,9 @@ object Main {
     println(sequence(List(Some(1), Some(2), Some(3))))
     println(sequence(List(Some(1), None, Some(3))))
 
+    // ~~~~ STREAM EXERCISES ~~~~ //
+    println(testStream.headOption)
+
     // Exercise 5.1
     println(testStream.toList)
 
@@ -203,16 +206,19 @@ object Main {
     println(testStream.drop(2).toList)
 
     // Exercise 5.3
-    def lessThan(i: Int): Boolean = {
+    def lessThanFour(i: Int): Boolean = {
       i <= 3
     }
-    println(testStream.takeWhile(lessThan).toList)
+    println(testStream.filterStream(lessThanFour).toList)
+    println(testStream.takeWhile2(lessThanFour).toList)
 
     // Exercise 5.4
-    println(testStream.forAll(lessThan))
+    println(testStream.forAll(lessThanFour))
 
     // Exercise 5.5
-    println(testStream.takeWhileFold(lessThan).toList)
+    println(testStream.takeWhileFold(lessThanFour).toList)
+    println("STILL Working?")
+    println(testStream.filterFold(lessThanFour).toList)
 
     // Exercise 5.6
     println(testStream.map(x => x.toString + "hi").toList)

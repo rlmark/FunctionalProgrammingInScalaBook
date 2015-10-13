@@ -4,10 +4,17 @@ import Stream.cons
 
 sealed trait Stream[+A] {
 
+  def headOption:Option[A] = {
+    this match {
+      case Empty => None
+      case Cons(h, t) => Some(h())
+    }
+  }
+
   // Exercise 5.1
   def toList: List[A] = this match {
     case Empty => Nil
-    case Cons(h , t) => h() :: t().toList
+    case Cons(h, t) => h() :: t().toList
   }
 
   // Exercise 5.2
@@ -15,7 +22,8 @@ sealed trait Stream[+A] {
   def take(n: Int): Stream[A] = this match {
     case Empty => Empty
     case _ if n == 0 => Empty
-    case Cons(head, tail) => Cons(head, () => tail().take(n-1))
+    case Cons(h, t) => cons(h(), t().take(n-1))
+    //case Cons(head, tail) => Cons(head, () => tail().take(n-1))
   }
 
   // implement drop, which returns the stream minus the first n elements,
@@ -27,11 +35,21 @@ sealed trait Stream[+A] {
 
   // Exercise 5.3
   // return all starting elements of a Stream that match the given predicate.
-  def takeWhile(f: A => Boolean): Stream[A] = this match {
+  // Note: I think I accidentally wrote Filter, not takeWhile. Ask Kate.
+  def filterStream(f: A => Boolean): Stream[A] = this match {
     case Empty => Empty
     case Cons(head, tail) => {
-      if (f(head())) Cons(head, () => tail().takeWhile(f))
-      else tail().takeWhile(f)}
+      if (f(head())) Cons(head, () => tail().filterStream(f))
+      else tail().filterStream(f)}
+  }
+
+  // HAHAHA this is THE REAL TAKEWHILE...
+  def takeWhile2(f: A => Boolean): Stream[A] = this match {
+    case Empty => Empty
+    case Cons(head, tail) => {
+      if (f(head())) cons(head(), tail().takeWhile2(f))
+      else Empty
+    }
   }
 
   // the second argument here is lazy. So I can short circuit, whereas with regular list it will not short circuit.
@@ -61,7 +79,7 @@ sealed trait Stream[+A] {
   // Exercise 5.5
   // return all starting elements of a Stream that match the given predicate.
   def takeWhileFold(f: A => Boolean): Stream[A] = {
-    foldRightStream(Empty: Stream[A])((a, acc) => if (f(a)) Cons(() => a, () => acc) else acc )
+    foldRightStream(Empty: Stream[A])((a, acc) => if (f(a)) Cons(() => a, () => acc) else Empty )
   }
 
   // Exercise 5.7
@@ -83,9 +101,12 @@ sealed trait Stream[+A] {
   }
 
   // Filter takes elements out of a Stream if they do not fulfill a predicate
-  // Ask Jeremy, are these instance methods or class methods? They are called differently .notation vs (in params)
+  // Why the difference in .this? 
   def filter(f: A => Boolean): Stream[A] = {
     this.foldRightStream(Empty: Stream[A])((a, acc) => if (f(a)) Cons(() => a, () => acc) else acc )
+  }
+  def filterFold(f: A => Boolean): Stream[A] = {
+    foldRightStream(Empty: Stream[A])((a, acc) => if (f(a)) cons(a, acc) else acc)
   }
 
   // Exercise 5.13
@@ -121,8 +142,13 @@ sealed trait Stream[+A] {
       case _ => None
     }
   }
-  // zipAll function should continue the traversal as long as either stream has more elements
-  def zipAll[B](s2: Stream[B]): Stream[(Option[A],Option[B])] = ???
+
+//  // zipAll function should continue the traversal as long as either stream has more elements
+//  def zipAll[B](s2: Stream[B]): Stream[(Option[A],Option[B])] = {
+//    Stream.unfold((this, s2)){
+//      Go through each case, if there are both streams, one, the other, or none, and Cons them into a new stream???
+//      case (Cons(h1, t1), Cons(h2, t2)) =>
+//  }
 
 }
 case object Empty extends Stream[Nothing]
