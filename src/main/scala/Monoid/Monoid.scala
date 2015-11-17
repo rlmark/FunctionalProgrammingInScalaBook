@@ -1,0 +1,5 @@
+package Monoid
+
+trait Monoid {
+
+}

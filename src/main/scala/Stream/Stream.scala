@@ -147,7 +147,7 @@ sealed trait Stream[+A] {
 //  def zipAll[B](s2: Stream[B]): Stream[(Option[A],Option[B])] = {
 //    Stream.unfold((this, s2)){
 //      Go through each case, if there are both streams, one, the other, or none, and Cons them into a new stream???
-//      case (Cons(h1, t1), Cons(h2, t2)) =>
+//      case (Cons(h1, t1), Cons(h2, t2)) => Cons( )
 //  }
 
 }

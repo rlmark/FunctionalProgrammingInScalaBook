@@ -253,10 +253,37 @@ object Main {
     println(testStream.takeWhileUnfold(x => x < 5).toList)
     println(testStream.takeWhileUnfold(x => x < 1000).toList)
 
-    println("HI THIS IS WHERE YOU ARE")
 
     println(testStream.zipWithUnfold(testStream.take(3))((x,y) => x + y).toList)
     println(testStream.zipWithUnfold(testStream)((x,y) => x + y).toList)
+
+    def addBits(a: Int, b: Int) :Int = {
+      if (b == 0) a
+      else {
+        val sum = a ^ b //SUM of two integer is A XOR B
+        val carry = (a & b) << 1  //CARRY of two integer is A AND B
+        addBits(sum, carry)
+      }
+    }
+
+    println(addBits(4,5))
+    println(addBits(7,1))
+    println(addBits(6,3))
+
+    def subtractBits(a: Int, b: Int) :Int = {
+      addBits(a,~b) + 1
+    }
+
+    println("HI THIS IS WHERE YOU ARE")
+    println(subtractBits(5,4))
+    println(subtractBits(7,4))
+    println(subtractBits(10,4))
+    println(subtractBits(12,1))
+    println(subtractBits(1, 12))
+    println(subtractBits(0,0)) // weird case
+    println(subtractBits(-1,-2))
+
+
 
 
   }
