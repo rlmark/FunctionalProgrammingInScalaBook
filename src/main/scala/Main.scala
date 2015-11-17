@@ -1,8 +1,10 @@
-import scala.annotation.tailrec
 import List._
-import Tree._
+import Monoid.Monoid
 import Option._
 import Stream.Stream._
+import Tree._
+
+import scala.annotation.tailrec
 
 object Main {
 
@@ -274,7 +276,6 @@ object Main {
       addBits(a,~b) + 1
     }
 
-    println("HI THIS IS WHERE YOU ARE")
     println(subtractBits(5,4))
     println(subtractBits(7,4))
     println(subtractBits(10,4))
@@ -283,9 +284,14 @@ object Main {
     println(subtractBits(0,0)) // weird case
     println(subtractBits(-1,-2))
 
+    println("HI THIS IS WHERE YOU ARE")
 
+    val seq = IndexedSeq(1,2,3,4)
+    val additionMonoid: Monoid[String] = Monoid.stringMonoid
+    println(Monoid.foldMapV(seq, additionMonoid)(i => i.toString))
+    println(Monoid.foldMapV(IndexedSeq(1), additionMonoid)(i => i.toString))
+    println(Monoid.foldMapV(IndexedSeq(), additionMonoid)(i => i.toString))
 
 
   }
-
 }
