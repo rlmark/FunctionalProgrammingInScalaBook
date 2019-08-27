@@ -24,8 +24,8 @@ object List {
 
   def foldRight[A, B](list: List[A], seed: B)(f: (A, B) => B): B = {
     list match {
-      case (Nil) => seed
-      case (Cons(head, tail)) => f(head, foldRight(tail, seed)(f))
+      case Nil => seed
+      case Cons(head, tail) => f(head, foldRight(tail, seed)(f))
     }
   }
 
@@ -42,7 +42,7 @@ object List {
   // Exercise 3.2
   def tail[A](list: List[A]): List[A] = {
     list match {
-      case (Cons(head, tail)) => tail
+      case Cons(head, tail) => tail
       case Nil => Nil
     }
   }
@@ -54,7 +54,7 @@ object List {
 
   // Exercise 3.3
   def setHead[A](newItem: A, list: List[A]): List[A] = list match {
-    case (Cons(_, tail)) => Cons(newItem, tail)
+    case Cons(_, tail) => Cons(newItem, tail)
     case Nil => Cons(newItem, Nil)
   }
 
@@ -75,8 +75,8 @@ object List {
   // Exercise 3.5
   def dropWhile[A](l: List[A], f: A => Boolean): List[A] = {
     l match {
-      case (Nil) => Nil
-      case (Cons(head, tail)) => if (f(head)) dropWhile(tail, f)
+      case Nil => Nil
+      case Cons(head, tail) => if (f(head)) dropWhile(tail, f)
       else l
     }
   }
@@ -84,10 +84,10 @@ object List {
   // Exercise 3.6
   def init[A](l: List[A]): List[A] = {
     l match {
-      case (Nil) => Nil
-      case (Cons(head, Nil)) => Nil
-      case (Cons(head1, (Cons(head2, Nil)))) => Cons(head1, Nil)
-      case (Cons(head, tail)) => Cons(head, init(tail))
+      case Nil => Nil
+      case Cons(head, Nil) => Nil
+      case Cons(head1, Cons(head2, Nil)) => Cons(head1, Nil)
+      case Cons(head, tail) => Cons(head, init(tail))
     }
   }
 
@@ -106,8 +106,8 @@ object List {
   @tailrec
   def foldLeft[A,B](as: List[A], seed: B)(f: (B, A) => B): B = {
     as match {
-      case (Nil) => seed
-      case (Cons(head, tail)) => foldLeft(tail, f(seed, head))(f) 
+      case Nil => seed
+      case Cons(head, tail) => foldLeft(tail, f(seed, head))(f)
     }
   }
 
