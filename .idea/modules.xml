@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/functionalprogrammingscalabook.iml" filepath="$PROJECT_DIR$/.idea/modules/functionalprogrammingscalabook.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/functionalprogrammingscalabook-build.iml" filepath="$PROJECT_DIR$/.idea/modules/functionalprogrammingscalabook-build.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/FunctionalProgrammingScalaBook.iml" filepath="$PROJECT_DIR$/.idea/modules/FunctionalProgrammingScalaBook.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/FunctionalProgrammingScalaBook-build.iml" filepath="$PROJECT_DIR$/.idea/modules/FunctionalProgrammingScalaBook-build.iml" />
     </modules>
   </component>
 </project>
