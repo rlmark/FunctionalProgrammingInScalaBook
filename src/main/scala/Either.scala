@@ -16,8 +16,8 @@ sealed trait Either[+E, +A] {
   }
 
   def map2[EE >: E, B, C](b: Either[EE, B])(f: (A, B) => C): Either[EE, C] = this match {
-    case Right(value: A) => b match {
-      case Right(bValue: B) => Right(f(value, bValue))
+    case Right(aValue: A) => b match {
+      case Right(bValue: B) => Right(f(aValue, bValue))
       case Left(bError: EE) => Left(bError)
     }
     case Left(value: E) => Left(value)
@@ -30,7 +30,7 @@ object Either {
   def sequence[E, A](es: List[Either[E, A]]): Either[E, List[A]] = {
     es match {
       case Nil => Right(Nil)
-      case Cons(Right(head: A), tail: List[Either[E,A]]) => sequence(tail).map(Cons(head, _))
+      case Cons(Right(head: A), tail: List[Either[E,A]]) => sequence(tail).map(a => Cons(head, a))
       case Cons(Left(e), tail) => Left(e)
     }
   }
@@ -58,7 +58,6 @@ object EitherMain extends App {
   // Traverse
   val testList = List(2,4,6)
   println(traverse(testList)(i => if (i % 2 == 0) Right(i) else Left("Not Even")))
-  println(traverse(List.map(testList)(_ + 1))(i => if (i % 2 == 0) Right(i) else Left("Not Even"))
+  println(traverse(List.map(testList)(_ + 1))(i => if (i % 2 == 0) Right(i) else Left("Not Even")))
 
-  )
 }
